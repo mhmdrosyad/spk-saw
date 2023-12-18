@@ -17,31 +17,25 @@
                     <span class="hide-menu">Home</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="/" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-layout-dashboard"></i>
-                        </span>
-                        <span class="hide-menu">Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-small-cap">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Admin</span>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= base_url('hasil'); ?>" aria-expanded="false">
+
                         <span>
                             <i class="ti ti-history"></i>
                         </span>
                         <span class="hide-menu">Histori Perhitungan</span>
                     </a>
                 </li>
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">Admin</span>
+                </li>
+
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= base_url('tambah'); ?>" aria-expanded="false">
                         <span>
-                            <i class="ti ti-file-description"></i>
+                            <i class="ti ti-file-plus"></i>
                         </span>
-                        <span class="hide-menu">Data Kriteria</span>
+                        <span class="hide-menu">Tambah Topic</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

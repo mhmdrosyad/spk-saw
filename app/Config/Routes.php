@@ -31,6 +31,14 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->post('proses-form', 'Home::prosesForm');
+$routes->get('hasil', 'Home::hasil');
+$routes->get('home/hapus/(:num)', 'Home::hapus/$1', ['as' => 'delete_home']);
+$routes->get('tambah', 'Home::tambahAlternatif');
+$routes->post('alternatif/simpan', 'Home::simpanAlternatif');
+$routes->get('home/editAlternatif/(:num)', 'Home::editAlternatif/$1');
+$routes->post('home/updateAlternatif', 'Home::updateAlternatif');
+$routes->get('home/hapusAlternatif/(:num)', 'Home::hapusAlternatif/$1');
+
 
 
 /*
