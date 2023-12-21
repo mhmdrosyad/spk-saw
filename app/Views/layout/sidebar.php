@@ -2,13 +2,20 @@
     <!-- Sidebar scroll-->
     <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="/" class="text-nowrap logo-img">
-                <img src="<?= base_url('assets/images/logos/logo-saw.svg') ?>" width="180" alt="" />
+            <a href="/" class="text-nowrap logo-img d-flex align-items-center">
+                <img src="<?= base_url('assets/images/logos/uaa.png') ?>" width="50" alt="" />
+                <span class="text-dark fs-6 ms-2" style="font-weight: bold;">ADMIN|SPK</span>
+
+
             </a>
             <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                 <i class="ti ti-x fs-8"></i>
             </div>
         </div>
+
+
+
+
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
             <ul id="sidebarnav">

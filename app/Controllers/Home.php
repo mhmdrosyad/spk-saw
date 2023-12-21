@@ -306,21 +306,40 @@ class Home extends BaseController
 
     // HomeController.php
 
-    public function hasil()
+    public function hasil($topic = null)
     {
         $hasilModel = new M_Hasil();
-        $data['hasilData'] = $hasilModel->findAll();
+        $alternatifModel = new M_Alternatif();
+
+        // Jika $topic tidak null, ambil data hasil berdasarkan topic
+        if ($topic !== null) {
+            $data['hasilData'] = $hasilModel->getDataByTopic(urldecode($topic));
+        } else {
+            // Jika $topic null, ambil semua data hasil
+            $data['hasilData'] = $hasilModel->findAll();
+        }
+
+        // Mengambil daftar semua topic untuk filter
+        $data['allTopics'] = $alternatifModel->select('topic')->distinct()->findAll();
 
         return view('hasil', $data);
     }
+
     public function hapus($id)
     {
         $hasilModel = new M_Hasil();
-        $hasilModel->delete($id);
+        $result = $hasilModel->delete($id);
 
-        // Setelah menghapus, arahkan kembali ke halaman hasil
-        return redirect()->to(base_url('admin'))->with('success', 'Data berhasil dihapus.');
+        if ($result) {
+            // If deletion was successful
+            return $this->response->setJSON(['success' => true]);
+        } else {
+            // If deletion failed
+            return $this->response->setJSON(['success' => false]);
+        }
     }
+
+
     public function tambahAlternatif()
     {
         // Buat instance dari model M_Alternatif

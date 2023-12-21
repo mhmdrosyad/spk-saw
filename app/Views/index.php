@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SPK Pemilihan Topik Skripsi</title>
-  <link rel="shortcut icon" type="image/png" href="<?= base_url('assets/images/logos/favicon.png') ?>" />
+  <link rel="shortcut icon" type="image/png" href="<?= base_url('assets/images/logos/uaa.png') ?>" />
   <link rel="stylesheet" href="<?= base_url('assets/css/styles.min.css') ?>" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>

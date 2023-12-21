@@ -15,4 +15,8 @@ class M_Hasil extends Model
     {
         $this->insert($data);
     }
+    public function getDataByTopic($topic)
+    {
+        return $this->where('rekomendasi', $topic)->findAll();
+    }
 }
