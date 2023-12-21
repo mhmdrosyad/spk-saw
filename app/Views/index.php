@@ -358,7 +358,7 @@
                 }
 
                 // Membuat PDF
-                pdfMake.createPdf(docDefinition).download("output.pdf");
+                pdfMake.createPdf(docDefinition).download(`hasil_${nama}_${nim}.pdf`);
 
 
               }
