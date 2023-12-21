@@ -187,12 +187,6 @@
               let minat = <?= json_encode($minat, JSON_PRETTY_PRINT); ?>;
               let kemampuan = <?= json_encode($kemampuan, JSON_PRETTY_PRINT); ?>;
 
-              console.log(nilaiAkademik)
-              console.log(historiProjek)
-              console.log(pelatihan)
-              console.log(minat)
-              console.log(kemampuan)
-
               function generatePDF() {
                 // Mengurutkan data berdasarkan rank
                 var sortedData = alternatif.map((item, index) => {

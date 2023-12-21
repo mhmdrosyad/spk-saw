@@ -120,22 +120,23 @@ class Home extends BaseController
 
             ];
             // echo '<pre>';
-            // echo 'Tahap Analisis (Perhitungan SAW):';
+            // echo "Tahap Analisis (Perhitungan SAW):";
             // print_r($totalNilai);
             // echo '</pre>';
         }
 
+        $maxValue = [];
         // Normalisasi setiap elemen matriks
         foreach ($totalNilai as $key => $alternatif) {
-            // Temukan nilai maksimum pada baris
-            $maxValue = max($alternatif);
+            // Temukan nilai maksimum pada  baris
+            $maxValue[$key] = max($alternatif);
 
 
             // Periksa apakah $maxValue adalah nol
-            if ($maxValue != 0) {
+            if (!empty($maxValue) && $maxValue != 0) {
                 // Normalisasi setiap elemen matriks
                 foreach ($alternatif as $kriteria => $nilai) {
-                    $totalNilai[$key][$kriteria] /= $maxValue;
+                    $totalNilai[$key][$kriteria] /= $maxValue[$key];
                 }
             } else {
                 // Penanganan ketika $maxValue adalah nol (misalnya, atur semua nilai pada baris ini menjadi 0)
@@ -144,8 +145,9 @@ class Home extends BaseController
                 }
             }
         }
+        // var_dump($maxValue);
         // echo '<pre>';
-        // echo "Nilai Maksimum pada Alternatif $key: $maxValue\n";
+        // echo "Nilai Maksimum pada Alternatif $key: \n";
         // echo '</pre>';
 
         // Hitung total nilai untuk setiap kriteria

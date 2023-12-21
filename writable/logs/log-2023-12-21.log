@@ -160,3 +160,106 @@ INFO - 2023-12-21 04:03:49 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-12-21 04:06:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-12-21 04:06:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-12-21 04:07:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-21 04:13:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-21 04:26:36 --> array_map() expects at least 2 arguments, 1 given
+in APPPATH\Controllers\Home.php on line 131.
+ 1 APPPATH\Controllers\Home.php(131): array_map('max', 0.1, 0.3, 0, 0.2, 0.1)
+ 2 APPPATH\Controllers\Home.php(50): App\Controllers\Home->hitungSAW([...], [...], [...], [...], [...], 'joko', '1235649')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')
+CRITICAL - 2023-12-21 04:27:31 --> array_map() expects at least 2 arguments, 1 given
+in APPPATH\Controllers\Home.php on line 131.
+ 1 APPPATH\Controllers\Home.php(131): array_map('max', 0.1, 0.3, 0, 0.2, 0.1)
+ 2 APPPATH\Controllers\Home.php(50): App\Controllers\Home->hitungSAW([...], [...], [...], [...], [...], 'joko', '1235649')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')
+INFO - 2023-12-21 04:27:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-21 04:29:38 --> array_map() expects at least 2 arguments, 1 given
+in APPPATH\Controllers\Home.php on line 131.
+ 1 APPPATH\Controllers\Home.php(131): array_map(Object(Closure), 0.1, 0.3, 0, 0.2, 0.1)
+ 2 APPPATH\Controllers\Home.php(50): App\Controllers\Home->hitungSAW([...], [...], [...], [...], [...], 'joko', '1235649')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')
+CRITICAL - 2023-12-21 04:29:42 --> array_map() expects at least 2 arguments, 1 given
+in APPPATH\Controllers\Home.php on line 131.
+ 1 APPPATH\Controllers\Home.php(131): array_map(Object(Closure), 0.1, 0.3, 0, 0.2, 0.1)
+ 2 APPPATH\Controllers\Home.php(50): App\Controllers\Home->hitungSAW([...], [...], [...], [...], [...], 'joko', '1235649')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')
+CRITICAL - 2023-12-21 04:30:14 --> max(): Argument #1 ($value) must be of type array, float given
+in APPPATH\Controllers\Home.php on line 135.
+ 1 APPPATH\Controllers\Home.php(135): max(0.1)
+ 2 APPPATH\Controllers\Home.php(50): App\Controllers\Home->hitungSAW([...], [...], [...], [...], [...], 'joko', '1235649')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')
+CRITICAL - 2023-12-21 04:31:08 --> array_map() expects at least 2 arguments, 1 given
+in APPPATH\Controllers\Home.php on line 131.
+ 1 APPPATH\Controllers\Home.php(131): array_map(null, 0.1, 0.3, 0, 0.2, 0.1)
+ 2 APPPATH\Controllers\Home.php(50): App\Controllers\Home->hitungSAW([...], [...], [...], [...], [...], 'joko', '1235649')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')
+CRITICAL - 2023-12-21 04:31:35 --> max(): Argument #1 ($value) must be of type array, float given
+in APPPATH\Controllers\Home.php on line 135.
+ 1 APPPATH\Controllers\Home.php(135): max(0.1)
+ 2 APPPATH\Controllers\Home.php(50): App\Controllers\Home->hitungSAW([...], [...], [...], [...], [...], 'joko', '1235649')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')
+CRITICAL - 2023-12-21 04:34:08 --> max(): Argument #1 ($value) must be of type array, float given
+in APPPATH\Controllers\Home.php on line 135.
+ 1 APPPATH\Controllers\Home.php(135): max(0.1)
+ 2 APPPATH\Controllers\Home.php(50): App\Controllers\Home->hitungSAW([...], [...], [...], [...], [...], 'joko', '1235649')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')
+CRITICAL - 2023-12-21 04:36:06 --> max(): Argument #1 ($value) must be of type array, float given
+in APPPATH\Controllers\Home.php on line 135.
+ 1 APPPATH\Controllers\Home.php(135): max(0.1)
+ 2 APPPATH\Controllers\Home.php(50): App\Controllers\Home->hitungSAW([...], [...], [...], [...], [...], 'joko', '1235649')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')
+CRITICAL - 2023-12-21 04:38:08 --> Array to string conversion
+in APPPATH\Controllers\Home.php on line 153.
+ 1 APPPATH\Controllers\Home.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\app\\Controllers\\Home.php', 153)
+ 2 APPPATH\Controllers\Home.php(50): App\Controllers\Home->hitungSAW([...], [...], [...], [...], [...], 'joko', '1235649')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')
+CRITICAL - 2023-12-21 04:42:31 --> Undefined array key "nilai_akademik"
+in APPPATH\Controllers\Home.php on line 139.
+ 1 APPPATH\Controllers\Home.php(139): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nilai_akademik"', 'C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\app\\Controllers\\Home.php', 139)
+ 2 APPPATH\Controllers\Home.php(50): App\Controllers\Home->hitungSAW([...], [...], [...], [...], [...], 'joko', '1235649')
+ 3 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')
+INFO - 2023-12-21 04:43:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-21 04:43:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
