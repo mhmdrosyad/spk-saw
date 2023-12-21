@@ -30,15 +30,21 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->post('proses-form', 'Home::prosesForm');
-$routes->get('hasil', 'Home::hasil');
-$routes->get('home/hapus/(:num)', 'Home::hapus/$1', ['as' => 'delete_home']);
+$routes->post('/', 'Home::prosesForm');
+$routes->get('admin', 'Home::hasil');
+$routes->get('/hapus/(:num)', 'Home::hapus/$1', ['as' => 'delete_home']);
 $routes->get('tambah', 'Home::tambahAlternatif');
 $routes->post('alternatif/simpan', 'Home::simpanAlternatif');
 $routes->get('home/editAlternatif/(:num)', 'Home::editAlternatif/$1');
 $routes->post('home/updateAlternatif', 'Home::updateAlternatif');
 $routes->get('home/hapusAlternatif/(:num)', 'Home::hapusAlternatif/$1');
-
+$routes->get('register', 'Auth::register');
+$routes->post('register', 'Auth::attemptRegister');
+$routes->get('login', 'Auth::login');
+$routes->post('login', 'Auth::attemptLogin');
+$routes->get('logout', 'Auth::logout');
+$routes->get('cetak-pdf', 'Home::cetakPDF');
+$routes->get('hasil', 'Home::hasilUser');
 
 
 /*

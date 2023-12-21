@@ -58,6 +58,12 @@ class Home extends BaseController
         $data['nama'] = $nama;
         $data['nim'] = $nim;
 
+        $data['nilaiAkademik'] = $nilaiAkademik;
+        $data['historiProjek'] = $historiProjek;
+        $data['pelatihan'] = $pelatihan;
+        $data['minat'] = $minat;
+        $data['kemampuan'] = $kemampuan;
+
         // Dapatkan semua kunci (keys) dari hasil perhitungan
         $keys = array_keys($hasilPerhitungan);
 
@@ -84,11 +90,6 @@ class Home extends BaseController
 
         return view('index', $data);
     }
-
-
-
-
-
 
     protected function hitungSAW($nilaiAkademik, $historiProjek, $pelatihan, $minat, $kemampuan)
     {
@@ -128,9 +129,7 @@ class Home extends BaseController
         foreach ($totalNilai as $key => $alternatif) {
             // Temukan nilai maksimum pada baris
             $maxValue = max($alternatif);
-            // echo '<pre>';
-            // echo "Nilai Maksimum pada Alternatif $key: $maxValue\n";
-            // echo '</pre>';
+
 
             // Periksa apakah $maxValue adalah nol
             if ($maxValue != 0) {
@@ -145,7 +144,9 @@ class Home extends BaseController
                 }
             }
         }
-
+        // echo '<pre>';
+        // echo "Nilai Maksimum pada Alternatif $key: $maxValue\n";
+        // echo '</pre>';
 
         // Hitung total nilai untuk setiap kriteria
         $totalKriteria = array_fill_keys(array_keys($totalNilai[0]), 0);
@@ -154,19 +155,30 @@ class Home extends BaseController
                 $totalKriteria[$kriteria] += $nilai;
             }
         }
+        // echo '<pre>';
+        // echo 'Total Nilai setiap kriteria (Perhitungan SAW):';
+        // print_r($totalNilai);
+        // echo '</pre>';
 
         // Hitung bobot berdasarkan total nilai kriteria
         $jumlahAlternatif = count($totalNilai);
         $bobot = array_map(function ($total) use ($jumlahAlternatif) {
             return $total / $jumlahAlternatif;
         }, $totalKriteria);
-
+        // echo '<pre>';
+        // echo 'Total Nilai Kriteria(Perhitungan SAW):';
+        // print_r($totalNilai);
+        // echo '</pre>';
         // Terapkan bobot kriteria pada hasil perhitungan
         foreach ($totalNilai as $key => $alternatif) {
             foreach ($alternatif as $kriteria => $nilai) {
                 $totalNilai[$key][$kriteria] *= $bobotKriteria[$kriteria];
             }
         }
+        // echo '<pre>';
+        // echo 'Total Nilai (Perhitungan SAW):';
+        // print_r($totalNilai);
+        // echo '</pre>';
         // Tahap Perangkingan
         $ranking = [];
         foreach ($totalNilai as $key => $alternatif) {
@@ -198,9 +210,9 @@ class Home extends BaseController
                         return 0;
                     case '2,0 – 2,5':
                         return 0.1;
-                    case '2,5 – 3,0':
+                    case '2,6 – 3,0':
                         return 0.2;
-                    case '3,0 – 3,5':
+                    case '3,1 – 3,5':
                         return 0.3;
                     case '> 3,5':
                         return 0.4;
@@ -305,7 +317,7 @@ class Home extends BaseController
         $hasilModel->delete($id);
 
         // Setelah menghapus, arahkan kembali ke halaman hasil
-        return redirect()->to('hasil');
+        return redirect()->to(base_url('admin'))->with('success', 'Data berhasil dihapus.');
     }
     public function tambahAlternatif()
     {
@@ -331,7 +343,7 @@ class Home extends BaseController
         $alternatifModel->insert($data);
 
         // Redirect ke halaman lain jika diperlukan
-        return redirect()->to('/');
+        return redirect()->to(base_url('/tambah'))->with('success', 'Tambah alternatif berhasil.');
     }
     public function hapusAlternatif($id)
     {
@@ -342,7 +354,7 @@ class Home extends BaseController
         $alternatifModel->delete($id);
 
         // Redirect ke halaman tambah_alternatif
-        return redirect()->to(base_url('tambah'));
+        return redirect()->to(base_url('tambah'))->with('success', 'Alternatif berhasil dihapus.');
     }
     public function editAlternatif($id)
     {
@@ -371,6 +383,6 @@ class Home extends BaseController
         $alternatifModel->update($id, ['topic' => $topic]);
 
         // Redirect ke halaman tambah_alternatif
-        return redirect()->to(base_url('tambah'));
+        return redirect()->to(base_url('tambah'))->with('success', 'Update alternatif berhasil.');
     }
 }

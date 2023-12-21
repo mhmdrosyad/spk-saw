@@ -14,20 +14,16 @@
             <ul id="sidebarnav">
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Home</span>
+                    <span class="hide-menu">Admin</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="<?= base_url('hasil'); ?>" aria-expanded="false">
+                    <a class="sidebar-link" href="<?= base_url('admin'); ?>" aria-expanded="false">
 
                         <span>
                             <i class="ti ti-history"></i>
                         </span>
                         <span class="hide-menu">Histori Perhitungan</span>
                     </a>
-                </li>
-                <li class="nav-small-cap">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Admin</span>
                 </li>
 
                 <li class="sidebar-item">
@@ -38,7 +34,7 @@
                         <span class="hide-menu">Tambah Topic</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
+                <!-- <li class="sidebar-item">
                     <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
                         <span>
                             <i class="ti ti-file-description"></i>
@@ -53,7 +49,7 @@
                         </span>
                         <span class="hide-menu">Data User</span>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">AKUN</span>

@@ -1,0 +1,33 @@
+ERROR - 2023-12-19 15:27:43 --> mysqli_sql_exception: Table 'saw.hasil' doesn't exist in C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `ha...', 0)
+#1 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ha...')
+#2 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ha...')
+#3 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ha...', Array, false)
+#4 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\app\Models\M_Hasil.php(16): CodeIgniter\Model->insert(Array)
+#8 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\app\Controllers\Home.php(82): App\Models\M_Hasil->simpanHasil(Array)
+#9 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+#10 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#11 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 C:\Users\DELL\Documents\rosyad\project\joki\elpa si\spk-saw-pemilihan-minat\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\D...')
+#14 {main}
+CRITICAL - 2023-12-19 15:27:43 --> Table 'saw.hasil' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `hasil` (`nama`, `nim`, `rekomendasi`) VALUES (\'rosyad\', \'193200060\', \'Cyber Security\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `hasil` (`nama`, `nim`, `rekomendasi`) VALUES (\'rosyad\', \'193200060\', \'Cyber Security\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `hasil` (`nama`, `nim`, `rekomendasi`) VALUES (\'rosyad\', \'193200060\', \'Cyber Security\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `hasil` (`nama`, `nim`, `rekomendasi`) VALUES (:nama:, :nim:, :rekomendasi:)', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\M_Hasil.php(16): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Home.php(82): App\Models\M_Hasil->simpanHasil([...])
+10 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->prosesForm()
+11 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+12 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\DELL\\Documents\\rosyad\\project\\joki\\elpa si\\spk-saw-pemilihan-minat\\public\\index.php')

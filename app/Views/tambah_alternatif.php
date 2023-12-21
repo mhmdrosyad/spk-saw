@@ -5,8 +5,11 @@
 
     <!-- Card Tambah Alternatif -->
     <div class="card mb-4">
-        <div class="card-body">
+        <div class="card-header">
             <h2 class="card-title">Tambah Alternatif</h2>
+        </div>
+        <div class="card-body">
+
             <!-- Form untuk tambah alternatif -->
             <form action="<?= base_url('alternatif/simpan'); ?>" method="post">
                 <div class="mb-3">
@@ -14,7 +17,7 @@
                     <input type="text" class="form-control" id="topic" name="topic" required>
                 </div>
                 <button type="submit" class="btn btn-primary">
-                    Simpan <i class="ti ti-file fs-4 ms-2"></i>
+                    Simpan <i class="ti ti-device-floppy fs-4 ms-2"></i>
                 </button>
 
             </form>
@@ -23,11 +26,19 @@
 
     <!-- Card Data Alternatif -->
     <div class="card">
-        <div class="card-body">
+        <div class="card-header">
             <h2 class="card-title">Data Alternatif</h2>
+        </div>
+        <div class="card-body">
+            <?php if (session()->getFlashdata('success')) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            <?php endif; ?>
+
             <?php if (!empty($alternatifData)) : ?>
                 <table class="table table-bordered mt-3">
-                    <thead class="text-center bg-primary">
+                    <thead class="text-center bg-primary text-white">
                         <tr>
                             <th>No</th>
                             <th>Topic</th>
