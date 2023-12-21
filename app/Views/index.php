@@ -272,7 +272,7 @@
                 // Membuat document definition
                 var docDefinition = {
                   content: [{
-                      text: 'Hasil Pemilihan Topik Skripsi',
+                      text: 'Hasil Rekomendasi Pemilihan Topik Skripsi',
                       style: 'header'
                     },
                     {
