@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Modernize Free</title>
-    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+    <title>Register</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/uaa.png" />
     <link rel="stylesheet" href="../assets/css/styles.min.css" />
 </head>
 
@@ -19,7 +19,7 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                                    <img src="../assets/images/logos/logo-saw.svg" width="180" alt="">
+                                    <img src="../assets/images/logos/uaa.png" width="100" alt="">
                                 </a>
                                 <p class="text-center">Register Admin</p>
                                 <form method="post" action="/register">
@@ -31,7 +31,7 @@
                                         <label for="exampleInputPassword1" class="form-label">Password</label>
                                         <input name="password" type="password" class="form-control" id="exampleInputPassword1" required>
                                     </div>
-                                    <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign Up</button>
+                                    <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Register</button>
                                     <div class="d-flex align-items-center justify-content-center">
                                         <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
                                         <a class="text-primary fw-bold ms-2" href="/login">Sign In</a>

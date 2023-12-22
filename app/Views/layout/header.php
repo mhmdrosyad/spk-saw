@@ -9,29 +9,50 @@
         </ul>
         <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-                <li class="nav-item dropdown">
-                    <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
-                        <div class="message-body">
-                            <!-- <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                <i class="ti ti-user fs-6"></i>
-                                <p class="mb-0 fs-3">My Profile</p>
-                            </a>
-                            <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                <i class="ti ti-mail fs-6"></i>
-                                <p class="mb-0 fs-3">My Account</p>
-                            </a>
-                            <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                <i class="ti ti-list-check fs-6"></i>
-                                <p class="mb-0 fs-3">My Task</p>
-                            </a> -->
-                            <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
-                        </div>
+
+                <li class="nav-item">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="ti ti-calendar fs-6"></i>
+                        <p id="current-date" class="mb-0 fs-3" style="margin-right: 10px;"></p>
                     </div>
                 </li>
+
+                <li class="nav-item">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="ti ti-clock fs-6"></i>
+                        <p id="current-time" class="mb-0 fs-3"></p>
+                    </div>
+                </li>
+
+                <!-- Tambahan item-item lain jika diperlukan -->
             </ul>
         </div>
     </nav>
 </header>
+<script>
+    // Mendapatkan elemen jam dan tanggal
+    const currentTimeElement = document.getElementById('current-time');
+    const currentDateElement = document.getElementById('current-date');
+
+    // Fungsi untuk mengupdate waktu dan tanggal secara real-time
+    function updateClock() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const timeString = `${hours}:${minutes}:${seconds}`;
+        currentTimeElement.textContent = timeString;
+
+        const year = now.getFullYear();
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const day = now.getDate().toString().padStart(2, '0');
+        const dateString = `${year}-${month}-${day}`;
+        currentDateElement.textContent = dateString;
+    }
+
+    // Memanggil fungsi untuk pertama kali
+    updateClock();
+
+    // Memanggil fungsi secara berkala setiap detik (1000 milidetik)
+    setInterval(updateClock, 1000);
+</script>

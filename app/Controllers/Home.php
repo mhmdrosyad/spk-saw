@@ -120,7 +120,7 @@ class Home extends BaseController
 
             ];
             // echo '<pre>';
-            // echo "Tahap Analisis (Perhitungan SAW):";
+            // echo "Tahap Analisis Data(Perhitungan SAW):";
             // print_r($totalNilai);
             // echo '</pre>';
         }
@@ -145,9 +145,9 @@ class Home extends BaseController
                 }
             }
         }
-        // var_dump($maxValue);
         // echo '<pre>';
-        // echo "Nilai Maksimum pada Alternatif $key: \n";
+        // echo "max value (Perhitungan SAW):";
+        // print_r($maxValue);
         // echo '</pre>';
 
         // Hitung total nilai untuk setiap kriteria

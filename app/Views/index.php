@@ -105,11 +105,11 @@
                             <select class="form-control" name="kemampuan[]" required>
                               <!-- Options for kemampuan -->
                               <option value="">Pilih</option>
-                              <option value="Belum Menguasai < 39">Belum Menguasai</option>
-                              <option value="Kurang Menguasai 40 s/d 59">Kurang Menguasai</option>
-                              <option value="Cukup Menguasai 60 s/d 74">Cukup Menguasai</option>
-                              <option value="Menguasai 75 s/d 84">Menguasai </option>
-                              <option value="Sangat Menguasai 85 s/d 100">Sangat Menguasai</option>
+                              <option value="Belum Menguasai < 39">Belum Menguasai &lt; 39 </option>
+                              <option value="Kurang Menguasai 40 s/d 59">Kurang Menguasai 40 s/d 59</option>
+                              <option value="Cukup Menguasai 60 s/d 74">Cukup Menguasai 60 s/d 74</option>
+                              <option value="Menguasai 75 s/d 84">Menguasai 75 s/d 84 </option>
+                              <option value="Sangat Menguasai 85 s/d 100">Sangat Menguasai 85 s/d 100</option>
                             </select>
                           </td>
                         </tr>
