@@ -120,23 +120,30 @@ class Home extends BaseController
 
             ];
             // echo '<pre>';
-            // echo "Tahap Analisis Data(Perhitungan SAW):";
+            // echo "Tahap Analisis (Perhitungan SAW):";
             // print_r($totalNilai);
             // echo '</pre>';
         }
 
         $maxValue = [];
+        // Inisialisasi $maxValue dengan nilai minimum PHP_FLOAT_MIN
+        $maxValue = array_fill_keys(array_keys($totalNilai[0]), PHP_FLOAT_MIN);
+
         // Normalisasi setiap elemen matriks
         foreach ($totalNilai as $key => $alternatif) {
-            // Temukan nilai maksimum pada  baris
-            $maxValue[$key] = max($alternatif);
+            // Temukan nilai maksimum pada setiap kriteria
+            foreach ($alternatif as $kriteria => $nilai) {
+                $maxValue[$kriteria] = max($maxValue[$kriteria], $nilai);
+            }
+        }
 
-
+        // Normalisasi setiap elemen matriks berdasarkan nilai maksimum setiap kriteria
+        foreach ($totalNilai as $key => $alternatif) {
             // Periksa apakah $maxValue adalah nol
-            if (!empty($maxValue) && $maxValue != 0) {
+            if (!empty($maxValue) && array_sum($maxValue) != 0) {
                 // Normalisasi setiap elemen matriks
                 foreach ($alternatif as $kriteria => $nilai) {
-                    $totalNilai[$key][$kriteria] /= $maxValue[$key];
+                    $totalNilai[$key][$kriteria] /= $maxValue[$kriteria];
                 }
             } else {
                 // Penanganan ketika $maxValue adalah nol (misalnya, atur semua nilai pada baris ini menjadi 0)
@@ -145,9 +152,15 @@ class Home extends BaseController
                 }
             }
         }
+
+        // Tampilkan nilai maksimum setiap kriteria
+
+
+
+        // var_dump($maxValue);
         // echo '<pre>';
-        // echo "max value (Perhitungan SAW):";
-        // print_r($maxValue);
+        // echo "Tahap Analisis (Perhitungan SAW):";
+        // print_r($totalNilai);
         // echo '</pre>';
 
         // Hitung total nilai untuk setiap kriteria
