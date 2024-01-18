@@ -67,26 +67,40 @@ class Home extends BaseController
         // Dapatkan semua kunci (keys) dari hasil perhitungan
         $keys = array_keys($hasilPerhitungan);
 
-        // Dapatkan kunci dengan nilai rank tertinggi
-        $maxRankKey = array_search(max(array_column($hasilPerhitungan, 'rank')), array_column($hasilPerhitungan, 'rank'));
+        // Dapatkan nilai rank tertinggi
+        $maxRankValue = max(array_column($hasilPerhitungan, 'rank'));
 
-        // Pastikan bahwa kunci yang digunakan adalah kunci yang benar
-        if ($maxRankKey !== false && isset($keys[$maxRankKey])) {
-            $bestAlternativeKey = $keys[$maxRankKey];
+        // Temukan kunci-kunci yang memiliki nilai rank tertinggi
+        $maxRankKeys = array_keys(array_column($hasilPerhitungan, 'rank'), $maxRankValue);
 
-            // Dapatkan rekomendasi menggunakan kunci yang benar
-            $recommendedTopic = isset($data['alternatifOptions'][$bestAlternativeKey]['topic']) ? $data['alternatifOptions'][$bestAlternativeKey]['topic'] : '';
+        $recommendedTopics = [];
 
-            // Simpan hasil perhitungan ke dalam tabel hasil
-            $hasilModel = new M_Hasil();
-            $dataHasil = [
-                'nama' => $nama,
-                'nim' => $nim,
-                'rekomendasi' => $recommendedTopic,
-            ];
+        foreach ($maxRankKeys as $maxRankKey) {
+            // Pastikan bahwa kunci yang digunakan adalah kunci yang benar
+            if (isset($keys[$maxRankKey])) {
+                $bestAlternativeKey = $keys[$maxRankKey];
 
-            $hasilModel->simpanHasil($dataHasil);
+                // Dapatkan rekomendasi menggunakan kunci yang benar
+                $recommendedTopic = isset($data['alternatifOptions'][$bestAlternativeKey]['topic']) ? $data['alternatifOptions'][$bestAlternativeKey]['topic'] : '';
+
+                // Tambahkan rekomendasi ke dalam array
+                $recommendedTopics[] = $recommendedTopic;
+            }
         }
+
+        // Gabungkan semua topik menjadi satu string dipisahkan oleh koma
+        $recommendedTopicsString = implode(', ', $recommendedTopics);
+
+        // Simpan hasil perhitungan ke dalam tabel hasil
+        $hasilModel = new M_Hasil();
+        $dataHasil = [
+            'nama' => $nama,
+            'nim' => $nim,
+            'rekomendasi' => $recommendedTopicsString,
+        ];
+
+        $hasilModel->simpanHasil($dataHasil);
+        $data['recommendedTopicsString'] = $recommendedTopicsString;
 
         return view('index', $data);
     }
