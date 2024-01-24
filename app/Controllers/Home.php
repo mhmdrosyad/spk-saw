@@ -65,31 +65,36 @@ class Home extends BaseController
         $data['kemampuan'] = $kemampuan;
 
         // Dapatkan semua kunci (keys) dari hasil perhitungan
-        $keys = array_keys($hasilPerhitungan);
+        if (array_sum(array_column($hasilPerhitungan, 'rank')) == 0) {
+            // Jika semua nilai adalah 0, set rekomendasi ke "Tidak ada topik yang direkomendasikan"
+            $recommendedTopicsString = "Tidak terdefinisi";
+        } else {
+            $keys = array_keys($hasilPerhitungan);
 
-        // Dapatkan nilai rank tertinggi
-        $maxRankValue = max(array_column($hasilPerhitungan, 'rank'));
+            // Dapatkan nilai rank tertinggi
+            $maxRankValue = max(array_column($hasilPerhitungan, 'rank'));
 
-        // Temukan kunci-kunci yang memiliki nilai rank tertinggi
-        $maxRankKeys = array_keys(array_column($hasilPerhitungan, 'rank'), $maxRankValue);
+            // Temukan kunci-kunci yang memiliki nilai rank tertinggi
+            $maxRankKeys = array_keys(array_column($hasilPerhitungan, 'rank'), $maxRankValue);
 
-        $recommendedTopics = [];
+            $recommendedTopics = [];
 
-        foreach ($maxRankKeys as $maxRankKey) {
-            // Pastikan bahwa kunci yang digunakan adalah kunci yang benar
-            if (isset($keys[$maxRankKey])) {
-                $bestAlternativeKey = $keys[$maxRankKey];
+            foreach ($maxRankKeys as $maxRankKey) {
+                // Pastikan bahwa kunci yang digunakan adalah kunci yang benar
+                if (isset($keys[$maxRankKey])) {
+                    $bestAlternativeKey = $keys[$maxRankKey];
 
-                // Dapatkan rekomendasi menggunakan kunci yang benar
-                $recommendedTopic = isset($data['alternatifOptions'][$bestAlternativeKey]['topic']) ? $data['alternatifOptions'][$bestAlternativeKey]['topic'] : '';
+                    // Dapatkan rekomendasi menggunakan kunci yang benar
+                    $recommendedTopic = isset($data['alternatifOptions'][$bestAlternativeKey]['topic']) ? $data['alternatifOptions'][$bestAlternativeKey]['topic'] : '';
 
-                // Tambahkan rekomendasi ke dalam array
-                $recommendedTopics[] = $recommendedTopic;
+                    // Tambahkan rekomendasi ke dalam array
+                    $recommendedTopics[] = $recommendedTopic;
+                }
             }
-        }
 
-        // Gabungkan semua topik menjadi satu string dipisahkan oleh koma
-        $recommendedTopicsString = implode(', ', $recommendedTopics);
+            // Gabungkan semua topik menjadi satu string dipisahkan oleh koma
+            $recommendedTopicsString = implode(', ', $recommendedTopics);
+        }
 
         // Simpan hasil perhitungan ke dalam tabel hasil
         $hasilModel = new M_Hasil();
